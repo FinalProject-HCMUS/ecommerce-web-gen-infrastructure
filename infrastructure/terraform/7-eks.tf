@@ -151,7 +151,7 @@ resource "helm_release" "aws_lb_controller" {
   name       = "aws-load-balancer-controller"
   repository = "https://aws.github.io/eks-charts"
   chart      = "aws-load-balancer-controller"
-  version    = "1.7.2"  # Pinned to a stable version
+  version    = "1.12.0"  # Pinned to a stable version
   namespace  = "kube-system"
 
   set {
@@ -174,7 +174,18 @@ resource "helm_release" "aws_lb_controller" {
     value = aws_iam_role.aws_lb_controller_role.arn
   }
 
+  set {
+    name = "region"
+    value = local.region
+  }
+
+  set {
+    name = "vpcId"
+    value = aws_vpc.ecommerce-web-gen-vpc.id
+  }
+
   depends_on = [
+    aws_vpc.ecommerce-web-gen-vpc,
     aws_eks_cluster.eks_cluster,
     aws_iam_role_policy_attachment.aws_lb_controller_policy_attachment,
     aws_eks_fargate_profile.kube_system
