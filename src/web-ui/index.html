@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Website Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        pre { background: #f4f4f4; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Website Generator</h1>
+    <form id="generateForm">
+        <input type="text" id="apiKey" placeholder="Enter API Key" required><br><br>
+        <input type="text" id="prompt" placeholder="Enter prompt (e.g., 'Generate a blog')" required><br><br>
+        <button type="submit">Generate</button>
+    </form>
+    <h2>Generated Code:</h2>
+    <pre id="codeResult"></pre>
+    <h2>Preview:</h2>
+    <pre id="previewResult"></pre>
+
+    <script>
+        document.getElementById('generateForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const apiKey = document.getElementById('apiKey').value;
+            const prompt = document.getElementById('prompt').value;
+
+            // Call code-gen service
+            const codeResponse = await fetch('/api/code', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ apiKey, prompt })
+            });
+            const codeData = await codeResponse.json();
+            document.getElementById('codeResult').textContent = JSON.stringify(codeData, null, 2);
+
+            // Call preview service with the generated code
+            const previewResponse = await fetch('/api/preview', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ code: codeData.code })
+            });
+            const previewData = await previewResponse.json();
+            document.getElementById('previewResult').textContent = JSON.stringify(previewData, null, 2);
+        });
+    </script>
+</body>
+</html>

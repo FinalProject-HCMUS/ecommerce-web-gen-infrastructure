@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ .Values.namespace }}  # Namespace name is taken from values.yaml
+  annotations:
+    "helm.sh/hook": pre-install  # This hook will run before the chart is installed
+    "helm.sh/hook-delete-policy": before-hook-creation  # Delete before creating again if needed

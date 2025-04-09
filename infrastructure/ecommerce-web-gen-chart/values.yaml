@@ -1,0 +1,22 @@
+namespace: ecommerce-web-gen
+
+webUI:
+  name: web-ui
+  replicas: 3
+  image:
+    repository: 21120414/web-ui
+    tag: latest
+
+codeGen:
+  name: code-gen
+  replicas: 3
+  image:
+    repository: 21120414/code-gen
+    tag: latest
+
+preview:
+  name: preview
+  replicas: 3
+  image:
+    repository: 21120414/preview
+    tag: latest

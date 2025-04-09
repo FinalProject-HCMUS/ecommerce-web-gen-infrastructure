@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.webUI.name }}
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: {{ .Values.webUI.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.webUI.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.webUI.name }}
+    spec:
+      containers:
+      - name: {{ .Values.webUI.name }}
+        image: "{{ .Values.webUI.image.repository }}:{{ .Values.webUI.image.tag }}"
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.webUI.name }}-service
+  namespace: {{ .Values.namespace }}
+spec:
+  selector:
+    app: {{ .Values.webUI.name }}
+  ports:
+  - port: 80
+    targetPort: 80
+  type: ClusterIP

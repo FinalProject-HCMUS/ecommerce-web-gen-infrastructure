@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.codeGen.name }}
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: {{ .Values.codeGen.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.codeGen.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.codeGen.name }}
+    spec:
+      containers:
+      - name: {{ .Values.codeGen.name }}
+        image: "{{ .Values.codeGen.image.repository }}:{{ .Values.codeGen.image.tag }}"
+        ports:
+        - containerPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.codeGen.name }}-service
+  namespace: {{ .Values.namespace }}
+spec:
+  selector:
+    app: {{ .Values.codeGen.name }}
+  ports:
+  - port: 80
+    targetPort: 8000
+  type: ClusterIP
