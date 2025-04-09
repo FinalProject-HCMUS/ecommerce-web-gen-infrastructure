@@ -5,6 +5,8 @@ locals {
 
     igw_name = "ecommerce-web-gen-igw"
     default_route = "0.0.0.0/0"
+    nat_gateway_name_prefix = "ecommerce-web-gen-nat-gateway"
+    nat_gateway_eip_name_prefix = "ecommerce-web-gen-nat-gateway-eip"
 
     public_subnet_name_prefix = "public-ecommerce-web-gen-subnet"
     public_subnet_route_table_name = "public-ecommerce-web-gen-subnet-route-table"
