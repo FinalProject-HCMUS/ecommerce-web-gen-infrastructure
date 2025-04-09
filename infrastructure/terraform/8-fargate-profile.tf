@@ -76,7 +76,7 @@ resource "aws_eks_fargate_profile" "kube_system" {
 resource "aws_eks_addon" "coredns" {
   cluster_name   = aws_eks_cluster.eks_cluster.name
   addon_name     = "coredns"
-  addon_version  = "v1.11.3-eksbuild.1"  # Compatible with Kubernetes 1.30
+  addon_version  = "v1.11.4-eksbuild.2"  # Compatible with Kubernetes 1.30
 
   depends_on = [
     aws_eks_cluster.eks_cluster,
