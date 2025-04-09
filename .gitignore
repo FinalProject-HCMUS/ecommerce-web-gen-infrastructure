@@ -1,0 +1,44 @@
+# --- Terraform ---
+infrastructure/terraform/.terraform/
+infrastructure/terraform/*.tfstate
+infrastructure/terraform/*.tfstate.*
+infrastructure/terraform/crash.log
+
+# --- Helm Chart Archives ---
+infrastructure/ecommerce-web-gen-chart/*.tgz
+
+# --- Python ---
+__pycache__/
+*.pyc
+src/code-gen/venv/
+src/code-gen/.venv/
+
+# --- Node.js ---
+src/preview/node_modules/
+npm-debug.log
+yarn-error.log
+
+# --- Docker ---
+*.tar
+*.log
+
+# --- Environment Files ---
+.env
+*.env
+
+# --- Editor/IDE ---
+.vscode/
+.idea/
+*.swp
+
+# --- macOS ---
+.DS_Store
+
+# --- Backup Files ---
+*~ 
+*.bak
+
+# --- Optional: Ignore build artifacts or temp files (if any) ---
+dist/
+build/
+tmp/
