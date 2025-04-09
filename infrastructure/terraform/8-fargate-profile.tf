@@ -60,10 +60,6 @@ resource "aws_eks_fargate_profile" "kube_system" {
 
   selector {
     namespace = "kube-system"  # Covers all kube-system pods, including CoreDNS and AWS LB Controller
-
-    labels = {
-      "k8s-app" = "kube-dns"
-    }
   }
 
   tags = {
