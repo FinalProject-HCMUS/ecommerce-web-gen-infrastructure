@@ -27,7 +27,7 @@ resource "aws_iam_role_policy_attachment" "eks_fargate_pod_execution" {
 }
 
 # Fargate Profile for ecommerce-web-gen namespace
-resource "aws_eks_fargate_profile" "ecommerce_web_gen_fargate_profile" {
+resource "aws_eks_fargate_profile" "ecommerce_web_gen" {
   cluster_name           = aws_eks_cluster.eks_cluster.name
   fargate_profile_name   = local.fargate_profile_name
   pod_execution_role_arn = aws_iam_role.eks_fargate_pod_execution_role.arn
