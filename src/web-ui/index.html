@@ -27,7 +27,7 @@
             const prompt = document.getElementById('prompt').value;
 
             // Call code-gen service
-            const codeResponse = await fetch('/api/code', {
+            const codeResponse = await fetch('code-gen-service.ecommerce-web-gen.svc.cluster.local/api/code', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ apiKey, prompt })
@@ -36,7 +36,7 @@
             document.getElementById('codeResult').textContent = JSON.stringify(codeData, null, 2);
 
             // Call preview service with the generated code
-            const previewResponse = await fetch('/api/preview', {
+            const previewResponse = await fetch('preview-service.ecommerce-web-gen.svc.cluster.local/api/preview', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ code: codeData.code })
