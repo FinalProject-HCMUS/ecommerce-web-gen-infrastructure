@@ -15,7 +15,7 @@ locals {
     private_subnet_route_table_name = "private-ecommerce-web-gen-subnet-route-table"
 
     eks_cluster_name = "ecommerce-web-gen-eks-cluster"
-    eks_kubernetes_version = "1.31"
+    eks_kubernetes_version = "1.32"
     eks_cluster_service_role_name = "ecommerce-web-gen-eks-cluster-service-role"
 
     namespace = "kube-system"
