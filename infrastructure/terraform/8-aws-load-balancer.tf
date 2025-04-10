@@ -17,7 +17,7 @@ data "http" "iam_policy" {
 resource "aws_iam_policy" "aws_lb_controller_policy" {
   name        = "AWSLoadBalancerControllerIAMPolicy"
   description = "IAM policy for AWS Load Balancer Controller"
-  policy      = data.http.iam_policy.body
+  policy      = data.http.iam_policy.response_body
 }
 
 # IAM role trust relationship policy for the service account
