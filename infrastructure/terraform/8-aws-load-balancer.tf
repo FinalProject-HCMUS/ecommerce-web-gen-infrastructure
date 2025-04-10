@@ -80,11 +80,11 @@ resource "helm_release" "aws_lb_controller" {
   }
   set {
     name  = "vpcId"
-    value = aws_vpc.ecommerce_web_gen_vpc.id
+    value = aws_vpc.ecommerce-web-gen-vpc.id
   }
 
   depends_on = [
-    aws_vpc.ecommerce_web_gen_vpc,                  # Assumed resource
+    aws_vpc.ecommerce-web-gen-vpc,                  # Assumed resource
     aws_eks_cluster.eks_cluster,                    # Assumed resource
     aws_iam_role_policy_attachment.aws_lb_controller_policy_attachment,
     aws_eks_fargate_profile.kube_system             # Assumed resource
