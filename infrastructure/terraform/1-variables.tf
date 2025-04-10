@@ -18,6 +18,9 @@ locals {
     eks_kubernetes_version = "1.31"
     eks_cluster_service_role_name = "ecommerce-web-gen-eks-cluster-service-role"
 
+    namespace = "kube-system"
+    service_account_name = "aws-load-balancer-controller"
+
     ecommerce-web-gen-namespace = "ecommerce-web-gen"
 
     fargate_pod_execution_role_name = "ecommerce-web-gen-eks-cluster-fargate-pod-execution-role"
