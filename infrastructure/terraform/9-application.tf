@@ -16,7 +16,7 @@ resource "helm_release" "ecommerce_web_gen" {
   depends_on = [ 
     aws_eks_cluster.eks_cluster,
     kubernetes_namespace.ecommerce-web-gen-namespace,
-    aws_eks_fargate_profile.ecommerce_web_gen_fargate_profile,
+    aws_eks_fargate_profile.ecommerce_web_gen,
     helm_release.aws_lb_controller
   ]
 }
