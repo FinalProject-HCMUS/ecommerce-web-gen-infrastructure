@@ -1,6 +1,6 @@
 # E-commerce Website Generator Infrastructure as Code
 
-This project provides scalable, reliable, and efficient infrastructure tailored specifically for an e-commerce website generator, utilizing modern cloud technologies and best practices.
+This project provides scalable, reliable, and efficient infrastructure tailored for an e-commerce website generator, utilizing modern cloud technologies and best practices.
 
 > **Note:** All application code within the `src/` directory serves as placeholder code only, as the actual application development is maintained in a separate repository.
 
@@ -8,13 +8,23 @@ This project provides scalable, reliable, and efficient infrastructure tailored 
 
 - **Infrastructure as Code (IaC):** Utilizes Terraform (HCL) to manage and automate cloud infrastructure.
 - **Containerization:** Docker configurations enable seamless deployment and consistency across environments.
-- **Multi-language Support:** Includes components written in Python, JavaScript, and HTML to support diverse application functionalities.
 - **Scalability:** Architected to dynamically scale infrastructure based on traffic demand.
-- **Security:** Emphasizes secure, compliant configurations following cloud security best practices.
+
+## Tech Stack
+
+The infrastructure's tech stack including:
+
+- **Kubernetes**: Orchestrates and manages containerized applications.
+
+- **Terraform**: Manages infrastructure as code for consistent and repeatable deployments.
+
+- **Helm**: Simplifies deployment and management of Kubernetes applications.
+
+- **AWS**: Cloud provider.
 
 ## Repository Structure
 
-The repository structure is organized clearly as follows:
+The repository structure is organized as follows:
 
 ```
 ecommerce-infrastructure
