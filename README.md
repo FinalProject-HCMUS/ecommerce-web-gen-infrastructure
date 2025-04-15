@@ -27,37 +27,36 @@ The infrastructure's tech stack including:
 The repository structure is organized as follows:
 
 ```
-ecommerce-infrastructure
+ecommerce-web-gen-infrastructure
 ├── infrastructure
-│   ├── ecommerce-web-gen-chart
-│   │   ├── charts
-│   │   ├── Chart.yaml
-│   │   ├── ecommerce-web-gen-chart-0.1.0.tgz
-│   │   ├── templates
-│   │   │   ├── code-gen.yaml
-│   │   │   ├── preview.yaml
-│   │   │   └── web-ui.yaml
-│   │   └── values.yaml
-│   └── terraform
-│       ├── 1-variables.tf
-│       ├── 2-providers.tf
-│       ├── 3-vpc.tf
-│       ├── 4-subnets.tf
-│       ├── 5-gateways.tf
-│       ├── 6-route-tables.tf
-│       ├── 7-eks.tf
-│       ├── 8-aws-load-balancer.tf
-│       ├── 9-application.tf
-│       └── 10-fargate-profile.tf
+│   ├── ecommerce-web-gen-chart
+│   │   ├── Chart.yaml
+│   │   ├── templates
+│   │   │   ├── code-gen.yaml
+│   │   │   ├── preview.yaml
+│   │   │   └── web-ui.yaml
+│   │   └── values.yaml
+│   └── terraform
+│       ├── 1-variables.tf
+│       ├── 2-providers.tf
+│       ├── 3-vpc.tf
+│       ├── 4-subnets.tf
+│       ├── 5-gateways.tf
+│       ├── 6-route-tables.tf
+│       ├── 7-eks.tf
+│       ├── 8-aws-load-balancer.tf
+│       └── 9-application.tf
+│       └── 10-fargate-profile.tf
+├── README.md
 └── src
     ├── code-gen
-    │   ├── Dockerfile
-    │   ├── main.py
-    │   └── requirements.txt
+    │   ├── Dockerfile
+    │   ├── main.py
+    │   └── requirements.txt
     ├── preview
-    │   ├── Dockerfile
-    │   ├── main.js
-    │   └── package.json
+    │   ├── Dockerfile
+    │   ├── main.js
+    │   └── package.json
     └── web-ui
         ├── Dockerfile
         └── index.html
