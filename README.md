@@ -27,7 +27,6 @@ ecommerce-infrastructure
 │   │   │   ├── code-gen.yaml
 │   │   │   ├── preview.yaml
 │   │   │   └── web-ui.yaml
-│   │   ├── terraform.tfstate
 │   │   └── values.yaml
 │   └── terraform
 │       ├── 1-variables.tf
@@ -121,5 +120,3 @@ Contributions are highly welcomed! To contribute:
 ## Contact
 
 For questions, support, or collaboration, please contact [hoangtu47](https://github.com/hoangtu47).
-
----
